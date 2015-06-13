@@ -43,7 +43,14 @@ mkdir $i;
 done;
 
 # crawl for map images in x(dir)/y(filename)
-curl "http://khm1.google.co.in/kh/v=107&src=app&x=[$startx-$endx]&y=[$starty-$endy]&z=$zoom&s=Gali" -o "#1/#2.jpg"
+#curl "http://khm1.google.co.in/kh/v=107&src=app&x=[$startx-$endx]&y=[$starty-$endy]&z=$zoom&s=Gali" -o "#1/#2.jpg"
+# original url was not valid anymore; updated to new one
+# in case it does not work:
+#go to: http://maps.google.com , zoom to your area of intrest and look at the source code.
+#Find the code block containing the 'khm'... copy it and decode it here:
+#  http://ddecode.com/hexdecoder/
+# to find the url. probably change the integer after v=  
+curl "http://khms1.google.com/kh/v=174&hl=en&x=[$startx-$endx]&y=[$starty-$endy]&z=$zoom&s=Gali" -o "#1/#2.jpg"
 
 echo "Stiching images job(1)"
 
